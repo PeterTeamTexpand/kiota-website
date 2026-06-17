@@ -1,0 +1,23 @@
+# deploy / build tooling
+.vercel
+.vercelignore
+node_modules
+
+# editor / OS
+.DS_Store
+Thumbs.db
+*.log
+
+# local agent + skills tooling (not part of the site)
+.claude/
+.agents/
+skills-lock.json
+
+# working docs and scratch (not deployed)
+docs/
+KiotaDesignRevised.pdf
+kiota-sa-content-plan.md
+mobile_data_tester.py
+
+# temp/scratch
+*.tmp

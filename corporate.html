@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    try {
+      var m = sessionStorage.getItem('kiota-switch');
+      if (m && matchMedia('(min-width: 900px) and (pointer: fine)').matches &&
+          !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('switching-in', 'sw-' + m);
+      }
+    } catch (e) {}
+  </script>
+  <title>Kiota | Technology That Feels Human</title>
+  <meta name="description" content="Financial services, telecoms, and everyday commerce for trusted community networks across Africa, all inside WhatsApp.">
+  <meta name="author" content="Kiota">
+  <meta name="theme-color" content="#C97B2C">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kiota | Technology That Feels Human">
+  <meta property="og:description" content="Financial services, telecoms, and everyday commerce for trusted community networks across Africa, all inside WhatsApp.">
+  <meta property="og:site_name" content="Kiota">
+  <meta property="og:image" content="Kiota logos/Kiota logos/Kiota.pngs/Kiota_nest.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kiota | Technology That Feels Human">
+  <meta name="twitter:description" content="Financial services, telecoms, and everyday commerce for trusted community networks across Africa, all inside WhatsApp.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,800;1,800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=block">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,800;1,800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=block">
+
+  <link rel="stylesheet" href="styles.css?v=107">
+
+  <link rel="preload" as="image" href="Kiota logos/Kiota logos/Kiota.pngs/Kiota_no_bg_opt.webp">
+  <link rel="preload" as="image" href="assets/phone-hero-opt.webp">
+
+  <link rel="icon" type="image/svg+xml" href="Kiota logos/Kiota logos/Kiota Vectors/Kiota_nest_Svg.svg">
+</head>
+<body>
+
+  <div class="switch-veil" id="switchVeil" aria-hidden="true">
+    <span class="sv-panel sv-left"></span>
+    <span class="sv-panel sv-right"></span>
+    <div class="switch-veil-inner">
+      <img src="Kiota logos/Kiota logos/Kiota.pngs/Kiota_no_bg_opt.webp" alt="" width="240" height="94">
+      <span class="switch-veil-tag"></span>
+    </div>
+  </div>
+
+  <div class="hero-aura" id="hero-aura" aria-hidden="true"></div>
+
+  <a href="#hero" class="skip-link">Skip to main content</a>
+
+
+  <div class="brand-nav-logo" role="button" tabindex="0" aria-label="Kiota, back to top">
+    <img src="Kiota logos/Kiota logos/Kiota.pngs/Kiota_no_bg_opt2.webp" alt="Kiota Logo" width="160" height="48">
+  </div>
+
+  <div class="corp-seg" role="group" aria-label="Personal or business">
+    <a href="/">For you</a>
+    <a href="/corporate" aria-current="page">For business</a>
+  </div>
+
+  <div id="scroll-progress" aria-hidden="true">
+    <div id="scroll-progress-indicator"></div>
+  </div>
+
+  <div id="loader" role="dialog" aria-modal="true" aria-label="Loading Kiota Website">
+    <div class="loader-content">
+      <div class="loader-logo-wrapper" id="loader-logo">
+        <img src="Kiota logos/Kiota logos/Kiota.pngs/Kiota_no_bg_opt.webp" alt="Kiota" id="loader-wordmark-img" style="opacity: 0; width: 100%; height: auto; display: block;">
+      </div>
+      <p class="loader-tagline" id="loader-text">Technology that feels human.</p>
+    </div>
+  </div>
+
+  <div id="smooth-wrapper">
+
+    <section id="hero">
+
+      <div class="hero-noise-overlay" aria-hidden="true"></div>
+      <div class="hero-glow-orb-1" id="hero-orb-1" aria-hidden="true"></div>
+      <div class="hero-glow-orb-2" id="hero-orb-2" aria-hidden="true"></div>
+
+      <div class="hero-ripple-container" aria-hidden="true" id="hero-ripples">
+        <div class="hero-ripple" style="width: 20%; height: 20%; opacity: 0.12;"></div>
+        <div class="hero-ripple" style="width: 40%; height: 40%; opacity: 0.08;"></div>
+        <div class="hero-ripple" style="width: 60%; height: 60%; opacity: 0.04;"></div>
+        <div class="hero-ripple" style="width: 80%; height: 80%; opacity: 0.02;"></div>
+      </div>
+
+      <div class="hero-bg-nest hero-bg-nest-center" id="hero-bg-nest-center" aria-hidden="true">
+        <img src="Kiota logos/Kiota logos/Kiota.pngs/Kiota_nest_sm_opt.webp" alt="">
+      </div>
+      <div class="hero-bg-nest hero-bg-nest-left" id="hero-bg-nest-left" aria-hidden="true">
+        <img src="Kiota logos/Kiota logos/Kiota.pngs/Kiota_nest_sm_opt.webp" alt="Kiota Nest Logo Background Left">
+      </div>
+      <div class="hero-bg-nest hero-bg-nest-right" id="hero-bg-nest-right" aria-hidden="true">
+        <img src="Kiota logos/Kiota logos/Kiota.pngs/Kiota_nest_sm_opt.webp" alt="Kiota Nest Logo Background Right">
+      </div>
+      <div class="hero-bg-nest hero-bg-nest-bl" id="hero-bg-nest-bl" aria-hidden="true">
+        <img src="Kiota logos/Kiota logos/Kiota.pngs/Kiota_nest_sm_opt.webp" alt="Kiota Nest Logo Background Bottom Left">
+      </div>
+
+      <p class="hero-eyebrow" id="hero-subhead">KIOTA FOR BUSINESS</p>
+
+      <h1 class="hero-headline" id="hero-headline">
+        <span id="hero-headline-1">Finance that runs</span>
+        <span id="hero-headline-2" class="feels-human">on WhatsApp.</span>
+      </h1>
+
+      <p class="hero-tagline" id="hero-tagline">Payments, savings, and everyday commerce for the millions of Africans that banks never reached. All built on the app they already open every day.</p>
+
+      <div class="hero-actions" id="hero-actions">
+        <a href="#how-it-works" class="btn btn-primary" data-magnetic data-scroll-smooth="#how-it-works">See how it works</a>
+        <a href="#contact-section" class="btn btn-ghost" data-magnetic data-scroll-smooth="#contact-section">Get in touch</a>
+      </div>
+
+      <div class="hero-phone-showcase" aria-hidden="true">
+        <img src="assets/phone-hero-opt.webp" alt="" class="hero-phone-img" id="hero-phone-img" loading="eager">
+      </div>
+    </section>
+
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-content">
+        <span>WhatsApp-native ✦</span>
+        <span>Financial inclusion ✦</span>
+        <span>Community commerce ✦</span>
+        <span>Built for Africa ✦</span>
+        <span>Instant onboarding ✦</span>
+
+        <span>WhatsApp-native ✦</span>
+        <span>Financial inclusion ✦</span>
+        <span>Community commerce ✦</span>
+        <span>Built for Africa ✦</span>
+        <span>Instant onboarding ✦</span>
+      </div>
+    </div>
+
+    <section id="how-it-works">
+      <div class="drift-aura" aria-hidden="true"></div>
+      <div class="how-it-works-blob" style="width: 400px; height: 400px; top: 10%; left: 5%;"></div>
+      <div class="how-it-works-blob" style="width: 500px; height: 500px; bottom: 15%; right: 5%;"></div>
+
+            <h2 class="how-it-works-header" id="how-it-works-header">Just chat. Kiota handles the rest.</h2>
+      <p class="how-it-works-sub">Everything from onboarding to payments happens through simple conversation inside WhatsApp.</p>
+
+      <div class="hiw-grid" id="hiw-grid">
+
+        <article class="hiw-card hiw-card--mint">
+          <span class="hiw-pill">Instant Onboard</span>
+          <h3 class="hiw-title">Start in minutes</h3>
+          <p class="hiw-desc">Kiota removes the barriers of apps, downloads, and data costs. Users access essential services instantly through the WhatsApp interface they already know, available in local languages and designed for every literacy level.</p>
+          <div class="hiw-chat">
+            <div class="hiw-chat-bar">
+              <span class="hiw-chat-av"><img src="assets/kiota-nest-avatar.webp" alt=""></span>
+              <span class="hiw-chat-meta"><span class="hiw-chat-name">Kiota</span><span class="hiw-chat-status">online</span></span>
+            </div>
+            <div class="hiw-chat-body">
+              <p class="hiw-msg in">Welcome to Kiota. Send a photo of your ID to get started.</p>
+              <span class="hiw-pic"><img src="assets/id-card.webp" alt="ID document" loading="lazy"></span>
+              <p class="hiw-msg in">Verified &check; Your account is ready, no app or branch visit needed.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="hiw-card hiw-card--peach">
+          <span class="hiw-pill">Wallet</span>
+          <h3 class="hiw-title">Money in one place</h3>
+          <p class="hiw-desc">Accept payments, track daily takings, and settle straight to your bank, all with simple controls built for confidence and transparency.</p>
+          <div class="hiw-chat">
+            <div class="hiw-chat-bar">
+              <span class="hiw-chat-av"><img src="assets/kiota-nest-avatar.webp" alt=""></span>
+              <span class="hiw-chat-meta"><span class="hiw-chat-name">Kiota</span><span class="hiw-chat-status">online</span></span>
+            </div>
+            <div class="hiw-chat-body">
+              <p class="hiw-msg in">You've received <b>R250</b> from Sipho M.</p>
+              <p class="hiw-msg in">Today's takings: <b>R4,820</b></p>
+              <p class="hiw-msg out">Settle to my bank</p>
+              <p class="hiw-msg in">Done &check; R4,820 paid to your account.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="hiw-card hiw-card--yellow">
+          <span class="hiw-pill">Refer &amp; Earn</span>
+          <h3 class="hiw-title">Grow your network</h3>
+          <p class="hiw-desc">Kiota is built to spread through trust. Invite your customers, reward repeat business, and build momentum within local communities.</p>
+          <div class="hiw-chat">
+            <div class="hiw-chat-bar">
+              <span class="hiw-chat-av"><img src="assets/kiota-nest-avatar.webp" alt=""></span>
+              <span class="hiw-chat-meta"><span class="hiw-chat-name">Kiota</span><span class="hiw-chat-status">online</span></span>
+            </div>
+            <div class="hiw-chat-body">
+              <p class="hiw-msg out">Invite my customers to Kiota</p>
+              <p class="hiw-msg in">Share this link:<br><span class="hiw-link">kiota.africa/shop/thandi</span></p>
+              <p class="hiw-msg in">Earn rewards as they shop and transact.</p>
+              <p class="hiw-msg out">Send on WhatsApp</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="hiw-card hiw-card--sage">
+          <span class="hiw-pill">Airtime &amp; Data</span>
+          <h3 class="hiw-title">Top up in seconds</h3>
+          <p class="hiw-desc">Buy airtime and data for any network straight from the chat, with no app to download and no trip to the shop. More everyday services roll out from here.</p>
+          <div class="hiw-chat">
+            <div class="hiw-chat-bar">
+              <span class="hiw-chat-av"><img src="assets/kiota-nest-avatar.webp" alt=""></span>
+              <span class="hiw-chat-meta"><span class="hiw-chat-name">Kiota</span><span class="hiw-chat-status">online</span></span>
+            </div>
+            <div class="hiw-chat-body">
+              <p class="hiw-msg out">Buy airtime</p>
+              <p class="hiw-msg in">Sure. Any network, from <b>R5</b>. How much?</p>
+              <p class="hiw-msg out">R50, MTN</p>
+              <p class="hiw-msg in">R50 MTN airtime to your number. Pay now?</p>
+              <p class="hiw-msg out">Pay R50</p>
+              <p class="hiw-msg in">Done &check; Airtime loaded instantly.</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+    <section id="numbers-section">
+
+      <div class="scroll-dots-indicator" id="panel-dots" aria-hidden="true">
+        <div class="scroll-dot is-active"></div>
+        <div class="scroll-dot"></div>
+        <div class="scroll-dot"></div>
+        <div class="scroll-dot"></div>
+      </div>
+
+      <div class="horizontal-scroll-container" id="horizontal-scroll-container">
+
+        <div class="number-panel" id="panel-1">
+          <div class="panel-watermark" id="watermark-1">66%</div>
+          <div class="panel-content">
+            <span class="panel-kicker">The opportunity</span>
+            <span class="panel-num" id="num-1">66%</span>
+            <p class="panel-label">Of African adults are <span class="highlight">unbanked</span>, yet <span class="highlight">84%</span> already hold a SIM card. The solution is already in their pocket.</p>
+          </div>
+        </div>
+
+        <div class="number-panel" id="panel-2">
+          <div class="panel-watermark" id="watermark-2">500M</div>
+          <div class="panel-content">
+            <span class="panel-kicker">The reach</span>
+            <span class="panel-num" id="num-2">500M+</span>
+            <p class="panel-label">Active WhatsApp users across Africa. <span class="highlight">The channel already exists</span>. We simply unlock its potential.</p>
+          </div>
+        </div>
+
+        <div class="number-panel" id="panel-3">
+          <div class="panel-watermark" id="watermark-3">$180B</div>
+          <div class="panel-content">
+            <span class="panel-kicker">The flow</span>
+            <span class="panel-num" id="num-3">$180B+</span>
+            <p class="panel-label">Annual remittance flows crossing Africa's digital borders. <span class="highlight">The value is already moving.</span></p>
+          </div>
+        </div>
+
+        <div class="number-panel" id="panel-4">
+          <div class="panel-watermark" id="watermark-4">GAP</div>
+          <div class="panel-content">
+            <span class="panel-kicker">The position</span>
+            <span class="panel-num" id="num-4">The Gap</span>
+            <p class="panel-label">Kiota sits exactly where <span class="highlight">access, commerce, and community meet</span> to drive inclusive prosperity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="communities-section">
+
+      <div class="drift-aura" aria-hidden="true"></div>
+      <div class="drift-aura drift-aura--alt" aria-hidden="true"></div>
+
+      <div class="communities-grid-title">
+                <h2>Built for trusted community networks.</h2>
+      </div>
+
+      <div class="community-panels-stack" id="community-panels-stack">
+
+        <div class="community-panel" id="community-churches">
+          <div class="community-panel-inner">
+            <div class="community-info">
+              <h3 class="community-title">Churches & Religious Groups</h3>
+              <p class="community-desc">Supporting giving, communication, and coordinated care within trusted faith communities.</p>
+            </div>
+            <div class="community-art-container">
+              <div class="community-art-circle"></div>
+              <div class="community-art-illustration">
+
+                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M100 20V180M50 70H150" stroke="#C97B2C" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                  <circle cx="100" cy="70" r="40" stroke="#F5F5F2" stroke-width="4" stroke-dasharray="10 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="community-panel" id="community-funeral">
+          <div class="community-panel-inner">
+            <div class="community-info">
+              <h3 class="community-title">Funeral Parlours & Burial Societies</h3>
+              <p class="community-desc">Managing group protection, contributions, and payments during life's most sensitive moments.</p>
+            </div>
+            <div class="community-art-container">
+              <div class="community-art-circle"></div>
+              <div class="community-art-illustration">
+
+                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M100 180V100M100 100C120 80 160 80 160 50C160 20 120 20 100 60C80 20 40 20 40 50C40 80 80 80 100 100Z" stroke="#F5F5F2" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                  <circle cx="100" cy="120" r="20" stroke="#F5F5F2" stroke-width="4" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="community-panel" id="community-stokvels">
+          <div class="community-panel-inner">
+            <div class="community-info">
+              <h3 class="community-title">Stokvels & Savings Groups</h3>
+              <p class="community-desc">Enabling pooled savings, transparent contributions, and simple, accountable fund management.</p>
+            </div>
+            <div class="community-art-container">
+              <div class="community-art-circle"></div>
+              <div class="community-art-illustration">
+
+                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="100" cy="100" r="50" stroke="#C97B2C" stroke-width="6" />
+                  <circle cx="100" cy="50" r="16" fill="#F5F5F2" />
+                  <circle cx="150" cy="100" r="16" fill="#F5F5F2" />
+                  <circle cx="100" cy="150" r="16" fill="#F5F5F2" />
+                  <circle cx="50" cy="100" r="16" fill="#F5F5F2" />
+                  <path d="M100 50L150 100L100 150L50 100Z" stroke="#F5F5F2" stroke-width="2" stroke-dasharray="6 4" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="community-panel" id="community-diaspora">
+          <div class="community-panel-inner">
+            <div class="community-info">
+              <h3 class="community-title">Diaspora & Traditional Leadership Networks</h3>
+              <p class="community-desc">Connecting families across borders and strengthening community-led remittances.</p>
+            </div>
+            <div class="community-art-container">
+              <div class="community-art-circle"></div>
+              <div class="community-art-illustration">
+
+                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="100" cy="100" r="60" stroke="#F5F5F2" stroke-width="4" />
+                  <path d="M40 100H160M100 40C125 60 125 140 100 160M100 40C75 60 75 140 100 160" stroke="#C97B2C" stroke-width="4" stroke-linecap="round" />
+                  <circle cx="100" cy="100" r="12" fill="#C97B2C" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-scales-section">
+      <div class="drift-aura drift-aura--alt" aria-hidden="true"></div>
+      <img class="section-nest section-nest--br" src="Kiota logos/Kiota logos/Kiota.pngs/Kiota_nest_sm_opt.webp" alt="" aria-hidden="true">
+
+      <div class="why-scales-bg-kente" id="scales-bg-kente" aria-hidden="true">
+        <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 100 L1000 100 M0 200 L1000 200 M0 300 L1000 300 M0 400 L1000 400 M0 500 L1000 500 M0 600 L1000 600 M0 700 L1000 700 M0 800 L1000 800 M0 900 L1000 900" stroke="#F5F5F2" stroke-width="1.5" stroke-dasharray="15 15" />
+          <path d="M50 0 L150 100 L50 200 L150 300 L50 400 L150 500 L50 600 L150 700 L50 800 L150 900 L50 1000" stroke="#C97B2C" stroke-width="2" />
+          <path d="M850 0 L950 100 L850 200 L950 300 L850 400 L950 500 L850 600 L950 700 L850 800 L950 900 L850 1000" stroke="#C97B2C" stroke-width="2" />
+        </svg>
+      </div>
+
+      <div class="why-scales-top">
+        <div class="why-scales-header" id="scales-header">
+                    <h2>Driving growth, reach, and resilience across Africa.</h2>
+          <p class="why-scales-intro">A community platform connecting people and payments to unlock affordable reach and real economic participation in emerging markets.</p>
+        </div>
+
+        <div class="ea-chat-mock why-scales-chat" aria-hidden="true">
+          <div class="ea-chat-window">
+            <div class="ea-chat-topbar">
+              <span class="ea-chat-avatar"><img src="Kiota logos/Kiota logos/Kiota.pngs/Kiota_nest_sm_opt.webp" alt="" /></span>
+              <div class="ea-chat-meta">
+                <span class="ea-chat-name">Kiota</span>
+                <span class="ea-chat-status">online</span>
+              </div>
+            </div>
+            <div class="ea-chat-body">
+              <div class="ea-msg ea-msg--in">How do communities grow on Kiota? 🌍</div>
+              <div class="ea-msg ea-msg--out">Members invite members. Trust does the rest.</div>
+              <div class="ea-msg ea-msg--in">All inside WhatsApp. No apps, no data barriers. 🚀</div>
+              <div class="ea-typing" aria-hidden="true"><span></span><span></span><span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-scales-content" id="scales-content">
+
+        <div class="parallax-row">
+          <div class="row-left">
+            <div class="row-dot"></div>
+            <span class="row-num">01</span>
+            <h3 class="row-title">Embedded market access</h3>
+          </div>
+          <p class="row-desc">Reach underserved customers through WhatsApp, a channel they already use every day.</p>
+        </div>
+
+        <div class="parallax-row">
+          <div class="row-left">
+            <div class="row-dot"></div>
+            <span class="row-num">02</span>
+            <h3 class="row-title">Low-cost distribution</h3>
+          </div>
+          <p class="row-desc">Erases hefty marketing budgets by activating organic community networks on the ground.</p>
+        </div>
+
+        <div class="parallax-row">
+          <div class="row-left">
+            <div class="row-dot"></div>
+            <span class="row-num">03</span>
+            <h3 class="row-title">Defensible infrastructure</h3>
+          </div>
+          <p class="row-desc">Proprietary logic bridges legacy core banking protocols directly into clean webhooks and chats.</p>
+        </div>
+
+        <div class="parallax-row">
+          <div class="row-left">
+            <div class="row-dot"></div>
+            <span class="row-num">04</span>
+            <h3 class="row-title">High engagement</h3>
+          </div>
+          <p class="row-desc">Achieves unmatched activation retention rates due to localized, highly familiar conversational interfaces.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="team-section">
+      <div class="drift-aura" aria-hidden="true"></div>
+      <div class="team-container">
+        <div class="team-left">
+                    <h2>Where expertise meets purpose.</h2>
+          <p>Combining fintech, telecoms, AI, and community expertise to build scalable digital access across Africa.</p>
+        </div>
+
+        <div class="team-right-list" id="team-cards-list">
+
+          <a class="team-member-card team-member-card--link" href="https://www.linkedin.com/in/mark-o-flaherty-cfp%C2%AE%EF%B8%8F-7805932a/" target="_blank" rel="noopener noreferrer" aria-label="Mark O'Flaherty on LinkedIn">
+            <div class="member-avatar member-avatar--photo">
+              <img
+                src="team/mark-oflaherty.jpg"
+                alt="Mark O'Flaherty"
+                class="member-photo"
+                width="100" height="100"
+              >
+              <span class="member-avatar-fallback" aria-hidden="true">MO</span>
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Mark O'Flaherty</h3>
+              <p class="member-role">Product Strategy & Ecosystem Lead</p>
+            </div>
+            <span class="member-linkedin-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</span>
+          </a>
+
+          <a class="team-member-card team-member-card--link" href="https://www.linkedin.com/in/anthonyrobinsonza/" target="_blank" rel="noopener noreferrer" aria-label="Anthony Robinson on LinkedIn">
+            <div class="member-avatar member-avatar--photo">
+              <img
+                src="team/anthony-robinson.jpg"
+                alt="Anthony Robinson"
+                class="member-photo"
+                width="100" height="100"
+              >
+              <span class="member-avatar-fallback" aria-hidden="true">AR</span>
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Anthony Robinson</h3>
+              <p class="member-role">Technology Lead</p>
+            </div>
+            <span class="member-linkedin-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</span>
+          </a>
+
+          <div class="team-member-card">
+            <div class="member-avatar">KS</div>
+            <div class="member-info">
+              <h3 class="member-name">Kyne Slinger</h3>
+              <p class="member-role">Advisory Team</p>
+            </div>
+          </div>
+
+          <a class="team-member-card team-member-card--link" href="https://www.linkedin.com/in/cliff-van-belkum-2b7a9110a/" target="_blank" rel="noopener noreferrer" aria-label="Cliff van Belkum on LinkedIn">
+            <div class="member-avatar member-avatar--photo">
+              <img
+                src="team/cliff-van-belkum.jpg"
+                alt="Cliff van Belkum"
+                class="member-photo"
+                width="100" height="100"
+              >
+              <span class="member-avatar-fallback" aria-hidden="true">CB</span>
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Cliff van Belkum</h3>
+              <p class="member-role">Insurance & Distribution Strategy Lead</p>
+            </div>
+            <span class="member-linkedin-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="philosophy-section">
+
+      <div class="philosophy-bubble-bg" style="top: 15%; left: 8%; width: 140px;" aria-hidden="true" id="bubble-1">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 10 H90 V70 H30 L10 90 Z" stroke="#F5F5F2" stroke-width="2" />
+        </svg>
+      </div>
+      <div class="philosophy-bubble-bg" style="bottom: 20%; right: 10%; width: 180px;" aria-hidden="true" id="bubble-2">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M90 10 H10 V70 H70 L90 90 Z" stroke="#F5F5F2" stroke-width="2" />
+        </svg>
+      </div>
+
+      <div class="philosophy-screen" id="philosophy-screen-1">
+        <span class="philosophy-label">Our Promise</span>
+        <h2 class="philosophy-wave-text" id="wave-text-1">
+          <span>Technology</span>
+          <span>that</span>
+          <span class="accent blend-orange">feels</span>
+          <span class="accent blend-orange">human.</span>
+        </h2>
+      </div>
+
+      <div class="philosophy-screen" id="philosophy-screen-2">
+        <span class="philosophy-label">Our Mission</span>
+        <h2 class="philosophy-wave-text" id="wave-text-2">
+          <span>Access,</span>
+          <span class="blend-orange">dignity,</span>
+          <span>and</span>
+          <span class="accent">opportunity.</span>
+        </h2>
+      </div>
+
+      <div class="philosophy-screen" id="philosophy-screen-3">
+        <span class="philosophy-label">Our Roots</span>
+        <h2 class="philosophy-wave-text" id="wave-text-3">
+          <span>Built</span>
+          <span>for</span>
+          <span class="blend-orange">Africa.</span>
+          <span>By</span>
+          <span class="accent">Africa.</span>
+        </h2>
+      </div>
+    </section>
+
+    <section id="early-access-section">
+      <img class="section-nest section-nest--tl" src="Kiota logos/Kiota logos/Kiota.pngs/Kiota_nest_sm_opt.webp" alt="" aria-hidden="true">
+
+      <div class="early-access-glow" aria-hidden="true"></div>
+
+      <div class="ea-bubble-deco ea-bubble-deco--tr" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M90 10 H10 V70 H70 L90 90 Z" stroke="#F5F5F2" stroke-width="2"/>
+        </svg>
+      </div>
+
+      <div class="early-access-grid">
+      <div class="early-access-inner">
+        <span class="early-access-badge">Now Onboarding</span>
+
+        <h2 class="early-access-headline" id="ea-headline">
+          <span class="ea-line"><span class="ea-line-inner">Bring your business</span></span>
+          <span class="ea-line ea-orange"><span class="ea-line-inner">onto WhatsApp.</span></span>
+        </h2>
+
+        <p class="early-access-sub">Take payments, settle straight to your bank, and reach customers where they already are, all inside the chat. Register your business and we'll onboard you as Kiota rolls out across your region.</p>
+
+        <a href="#contact-section" class="btn btn-primary btn-large ea-cta" data-scroll-smooth="#contact-section">
+          Onboard your business
+          <span class="btn-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+
+        <p class="early-access-note">Free to join &nbsp;·&nbsp; No app to build &nbsp;·&nbsp; We set you up directly</p>
+      </div>
+
+      <div class="ea-chat-mock" aria-hidden="true">
+        <div class="ea-chat-window">
+          <div class="ea-chat-topbar">
+            <span class="ea-chat-avatar"><img src="Kiota logos/Kiota logos/Kiota.pngs/Kiota_nest_sm_opt.webp" alt="" /></span>
+            <div class="ea-chat-meta">
+              <span class="ea-chat-name">Kiota</span>
+              <span class="ea-chat-status">online</span>
+            </div>
+          </div>
+          <div class="ea-chat-body">
+            <div class="ea-msg ea-msg--in">Karibu! 👋 Let's get your business set up.</div>
+            <div class="ea-msg ea-msg--out">How do my customers pay me?</div>
+            <div class="ea-msg ea-msg--in">Right here in WhatsApp. You settle straight to your bank. 🚀</div>
+            <div class="ea-typing" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section id="contact-section">
+      <div class="drift-aura drift-aura--alt" aria-hidden="true"></div>
+      <img class="section-nest section-nest--tr" src="Kiota logos/Kiota logos/Kiota.pngs/Kiota_nest_sm_opt.webp" alt="" aria-hidden="true">
+      <div class="contact-sunset-glow" aria-hidden="true" id="sunset-glow"></div>
+
+      <div class="ambient-circle" style="top: 15%; left: 15%;" aria-hidden="true"></div>
+      <div class="ambient-circle" style="top: 40%; right: 20%;" aria-hidden="true"></div>
+      <div class="ambient-circle" style="bottom: 30%; left: 25%;" aria-hidden="true"></div>
+
+      <div class="contact-main">
+        <h2 class="contact-headline" id="contact-headline">
+          <span>Let's</span>
+          <span>build</span>
+          <span>Africa's</span>
+          <span>digital</span>
+          <span class="orange-wave">future,</span>
+          <span class="orange-wave">together.</span>
+        </h2>
+
+        <p class="contact-subhead">Kiota creates technology that strengthens communities, expands access, and unlocks real economic opportunity.</p>
+
+        <div class="contact-button-wrapper" id="contact-btn-container">
+          <button type="button" class="btn btn-primary btn-large" data-magnetic id="contact-btn" data-modal="contact">Start a Conversation</button>
+        </div>
+
+        <div class="contact-info-list" id="contact-details">
+          <div class="contact-info-item">
+            <span class="contact-info-label">Email Us</span>
+            <a href="mailto:info@kiota.ai" class="contact-info-value">info@kiota.ai</a>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label">Call Us</span>
+            <a href="tel:+27786757516" class="contact-info-value">+27 78 675 7516</a>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label">Headquarters</span>
+            <span class="contact-info-value">La Lucia Ridge, KwaZulu-Natal</span>
+          </div>
+        </div>
+      </div>
+
+      <footer class="contact-footer-bar">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img src="Kiota logos/Kiota logos/Kiota.pngs/Kiota_no_bg_opt2.webp" alt="Kiota" class="footer-logo-img" width="120" height="36"/>
+            </div>
+            <p class="footer-tagline">Technology that feels human. Built for Africa, by Africa.</p>
+          </div>
+
+          <nav class="footer-nav">
+            <a href="#how-it-works" class="footer-link" data-magnetic>How it works</a>
+            <a href="#why-scales-section" class="footer-link" data-magnetic>Why Kiota</a>
+            <a href="#contact-section" class="footer-link" data-magnetic>Contact</a>
+            <a href="#hero" class="footer-link" data-magnetic>Back to top</a>
+          </nav>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copy">&copy; 2026 Kiota. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Terms of Service</a>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+  </div>
+
+  <button id="back-to-top-btn" class="back-to-top" aria-label="Back to Top">
+    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <div id="contact-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Contact Kiota" hidden>
+    <div class="modal-panel">
+
+      <div class="modal-glow" aria-hidden="true"></div>
+      <img class="modal-deco-nest" src="Kiota logos/Kiota logos/Kiota.pngs/Kiota_nest_sm_opt.webp" alt="" aria-hidden="true">
+
+      <button class="modal-close" id="modal-close-btn" aria-label="Close dialog">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="modal-eyebrow">Let's talk</span>
+        <h2 class="modal-title">Start a conversation.</h2>
+        <p class="modal-subtitle">Tell us about your community. We'll be in touch within 48 hours.</p>
+      </div>
+
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Your Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Jane Dlamini" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email Address</label>
+            <input type="email" id="cf-email" name="email" placeholder="hello@example.com" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-org">Organisation <span class="form-optional">(optional)</span></label>
+          <input type="text" id="cf-org" name="organisation" placeholder="Church, Stokvel, Company…" autocomplete="organization">
+        </div>
+
+        <div class="form-group">
+          <label for="cf-interest">I'm interested in</label>
+          <select id="cf-interest" name="interest">
+            <option value="">Select an area…</option>
+            <option value="whatsapp-commerce">WhatsApp Commerce</option>
+            <option value="financial-services">Financial Services</option>
+            <option value="community-savings">Community Savings & Stokvels</option>
+            <option value="partnership">Partnership / Investment</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="4" placeholder="Tell us a bit about your community or project…" required></textarea>
+        </div>
+
+        <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+          <label>Company website<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-large form-submit" data-magnetic>
+          <span>Send Message</span>
+          <span class="btn-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <p class="form-privacy">We respect your privacy. No spam, ever.</p>
+      </form>
+
+      <div class="form-success" id="form-success" hidden>
+        <div class="form-success-icon">✓</div>
+        <h3>Message sent!</h3>
+        <p>We'll be in touch within 48 hours.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const desktop = matchMedia('(min-width: 900px) and (pointer: fine)').matches &&
+                      !matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (root.classList.contains('switching-in')) {
+        try { sessionStorage.removeItem('kiota-switch'); } catch (e) {}
+        let revealed = false;
+        const reveal = () => {
+          if (revealed) return;
+          revealed = true;
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            root.classList.add('sw-out');
+            root.classList.remove('switching-in');
+            setTimeout(() => root.classList.remove('sw-out', 'sw-business', 'sw-personal'), 700);
+          }));
+        };
+        if (document.readyState === 'complete') reveal();
+        else window.addEventListener('load', reveal, { once: true });
+        setTimeout(reveal, 780);
+      }
+
+      if (!desktop) return;
+      document.querySelectorAll('.corp-seg a[href="/"]').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+          e.preventDefault();
+          const seg = link.closest('.corp-seg, .nav-seg');
+          if (seg) {
+            seg.querySelectorAll('a').forEach((a) => a.removeAttribute('aria-current'));
+            link.setAttribute('aria-current', 'page');
+          }
+          try { sessionStorage.setItem('kiota-switch', 'personal'); } catch (err) {}
+          setTimeout(() => {
+            root.classList.add('sw-personal', 'sw-cover');
+            setTimeout(() => { window.location.href = link.href; }, 330);
+          }, 240);
+        });
+      });
+    })();
+
+    (function () {
+      const cards = document.querySelectorAll('.hiw-card');
+      if (!cards.length) return;
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('chat-in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
+      cards.forEach((card) => io.observe(card));
+    })();
+  </script>
+
+  <script src="main.js?v=72"></script>
+</body>
+</html>

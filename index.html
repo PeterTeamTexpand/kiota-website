@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    try {
+      var m = sessionStorage.getItem('kiota-switch');
+      if (m && matchMedia('(min-width: 900px) and (pointer: fine)').matches &&
+          !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('switching-in', 'sw-' + m);
+      }
+    } catch (e) {}
+  </script>
+  <title>Kiota | Banking for your community</title>
+  <meta name="description" content="Send money, save with your group, and shop essentials, all inside WhatsApp. No app to download. No bank account needed.">
+  <meta name="theme-color" content="#F5F0E8">
+  <link rel="canonical" href="https://kiota.ai/">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kiota">
+  <meta property="og:title" content="Kiota | Banking for your community">
+  <meta property="og:description" content="Send money, save with your group, and shop essentials, all inside WhatsApp. No app to download.">
+  <meta property="og:url" content="https://kiota.ai/">
+  <meta property="og:image" content="https://kiota-website.vercel.app/assets/kiota-email-logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kiota | Banking for your community">
+  <meta name="twitter:description" content="Send money, save with your group, and shop essentials, all inside WhatsApp.">
+  <meta name="twitter:image" content="https://kiota-website.vercel.app/assets/kiota-email-logo.png">
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/lexend-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400 700;
+      font-display: optional;
+      src: url('/fonts/inter-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Lexend';
+      font-style: normal;
+      font-weight: 500 700;
+      font-display: optional;
+      src: url('/fonts/lexend-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+  </style>
+
+  <link rel="icon" type="image/svg+xml" href="Kiota logos/Kiota logos/Kiota Vectors/Kiota_nest_Svg.svg">
+
+  <style>
+
+    :root {
+      --green:       #1A6B4A;
+      --green-dark:  #145238;
+      --green-soft:  #E8F1ED;
+      --cream:       #F5F0E8;
+      --cream-deep:  #EFE8DC;
+      --white:       #FFFFFF;
+      --ink:         #1A1A1A;
+      --body:        #4A4A4A;
+      --muted:       #5F5F5F;
+      --hairline:    #E5DED1;
+      --gold:        #C9973A;
+      --wa:          #25D366;
+
+      --shadow-card:     0 2px 12px rgba(0,0,0,0.06);
+      --shadow-card-lg:  0 8px 32px rgba(0,0,0,0.08);
+
+      --shadow-raised:   0 18px 50px -12px rgba(20,82,56,0.18), 0 6px 16px rgba(0,0,0,0.06);
+
+      --radius-sm:   10px;
+      --radius:      16px;
+      --radius-lg:   24px;
+      --radius-pill: 999px;
+
+      --container:   1120px;
+
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-display: 'Lexend', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      font-weight: 400;
+      color: var(--body);
+      background: var(--cream);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+    @media (min-width: 640px) {
+      .container { padding: 0 24px; }
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(245,240,232,0.92);
+      backdrop-filter: saturate(180%) blur(8px);
+      -webkit-backdrop-filter: saturate(180%) blur(8px);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    .nav-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo img { height: 44px; width: auto; }
+    @media (min-width: 720px) {
+      .nav-logo img { height: 52px; }
+    }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      background: var(--green);
+      color: #fff;
+      border-radius: var(--radius-pill);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: -0.005em;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .nav-cta:hover { background: var(--green-dark); }
+    .nav-cta svg { width: 16px; height: 16px; }
+    .nav-seg {
+      display: inline-flex;
+      background: var(--cream-deep);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-pill);
+      padding: 3px;
+    }
+    .nav-seg a {
+      padding: 7px 15px;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--muted);
+      white-space: nowrap;
+      transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1), color 0.28s ease, box-shadow 0.28s ease;
+    }
+    .nav-seg a[aria-current="page"] {
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .nav-seg a:not([aria-current]):hover { color: var(--ink); }
+    .nav-seg a { will-change: transform; }
+    .nav-seg a:active { transform: scale(0.96); }
+    @media (max-width: 560px) {
+      .nav-cta { display: none; }
+      .nav-seg a { padding: 7px 12px; font-size: 0.8rem; }
+    }
+
+    /* Desktop page-switch transition (consumer <-> corporate) */
+    .switch-veil {
+      position: fixed;
+      inset: 0;
+      z-index: 100000;
+      pointer-events: none;
+      overflow: hidden;
+      visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sv-panel {
+      position: absolute;
+      top: -12%;
+      height: 124%;
+      width: 70%;
+      transform: skewX(-9deg) translate3d(0, 0, 0);
+      transition: transform 0.46s cubic-bezier(0.65, 0, 0.35, 1);
+      will-change: transform;
+      backface-visibility: hidden;
+    }
+    .sv-left {
+      left: -18%;
+      transform: skewX(-9deg) translate3d(-125%, 6%, 0);
+      background: linear-gradient(135deg, #22815A, #123F2C);
+    }
+    .sv-right {
+      right: -18%;
+      transform: skewX(-9deg) translate3d(125%, -6%, 0);
+      background: linear-gradient(135deg, #16573C, #0A3322);
+    }
+    .sv-left::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(201, 151, 58, 0), var(--gold), rgba(201, 151, 58, 0));
+      opacity: 0.8;
+    }
+    .switch-veil-inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .switch-veil-inner img {
+      width: 230px;
+      height: auto;
+      opacity: 0;
+      transform: translateY(14px) scale(0.96);
+      transition: opacity 0.4s ease 0.04s, transform 0.5s cubic-bezier(0.83, 0, 0.17, 1);
+    }
+    .switch-veil-tag {
+      font-family: 'Lexend', sans-serif;
+      font-size: 1.02rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-indent: 0.3em;
+      text-align: center;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.92);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.4s ease 0.12s, transform 0.5s cubic-bezier(0.83, 0, 0.17, 1) 0.06s;
+    }
+    .sw-business .sv-left { background: linear-gradient(135deg, #0F6E56, #08402F); }
+    .sw-business .sv-right { background: linear-gradient(135deg, #0B5240, #06301F); }
+    .sw-business .switch-veil-tag::before { content: "For business"; }
+    .sw-personal .switch-veil-tag::before { content: "For you"; }
+
+    html.switching-in .switch-veil,
+    .sw-cover .switch-veil,
+    .sw-out .switch-veil { visibility: visible; }
+    html.switching-in .sv-left,
+    .sw-cover .sv-left { transform: skewX(-9deg) translate3d(0, 0, 0); }
+    html.switching-in .sv-right,
+    .sw-cover .sv-right { transform: skewX(-9deg) translate3d(0, 0, 0); }
+    html.switching-in .switch-veil-inner img,
+    html.switching-in .switch-veil-tag,
+    .sw-cover .switch-veil-inner img,
+    .sw-cover .switch-veil-tag { opacity: 1; transform: translateY(0) scale(1); }
+    .sw-out .sv-left { transform: skewX(-9deg) translate3d(-125%, 6%, 0); }
+    .sw-out .sv-right { transform: skewX(-9deg) translate3d(125%, -6%, 0); }
+    .sw-out .switch-veil-inner img,
+    .sw-out .switch-veil-tag { opacity: 0; }
+    @media (prefers-reduced-motion: reduce) {
+      .switch-veil { display: none; }
+    }
+
+    .hero {
+      padding: 48px 0 56px;
+    }
+    @media (min-width: 640px) {
+      .hero { padding: 64px 0 72px; }
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: var(--green-soft);
+      color: var(--green);
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: 0.01em;
+    }
+    .hero-eyebrow::before {
+      content: "";
+      width: 6px; height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+    }
+    .hero h1 {
+      font-size: clamp(2.1rem, 7.5vw, 3.8rem);
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      margin-bottom: 18px;
+    }
+    .hero h1 .accent { color: var(--green); }
+    .hero-sub {
+      font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+      color: var(--body);
+      max-width: 540px;
+      margin-bottom: 32px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 480px) {
+      .hero-actions .btn-primary,
+      .hero-actions .btn-secondary { flex: 1 1 100%; justify-content: center; }
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 28px;
+      background: var(--green);
+      color: #fff;
+      border-radius: var(--radius-pill);
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 4px 14px rgba(26,107,74,0.22);
+    }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .btn-primary svg { width: 20px; height: 20px; }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 24px;
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--hairline);
+      border-radius: var(--radius-pill);
+      font-size: 1rem;
+      font-weight: 600;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+    .btn-secondary:hover { border-color: var(--ink); background: rgba(0,0,0,0.02); }
+
+    .hero-meta {
+      display: none;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    @media (min-width: 900px) {
+
+      .hero-meta { display: flex; }
+    }
+    .hero-meta-dot {
+      width: 4px; height: 4px;
+      background: var(--muted);
+      border-radius: 50%;
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-phone-card {
+      width: 100%;
+      max-width: 360px;
+      display: flex;
+      justify-content: center;
+      filter: drop-shadow(0 24px 48px rgba(20,82,56,0.18)) drop-shadow(0 6px 12px rgba(0,0,0,0.08));
+    }
+    .hero-phone-card img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+    }
+
+    @media (min-width: 900px) {
+      .hero { padding: 96px 0 112px; }
+      .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 64px; }
+    }
+
+    .trust {
+      padding: 8px 0 32px;
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px 12px;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--ink);
+      font-weight: 700;
+      text-align: center;
+    }
+    .trust-item svg {
+      width: 18px;
+      height: 18px;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+    @media (min-width: 720px) {
+      .trust-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+      .trust-item { font-size: 0.92rem; }
+    }
+
+    .section {
+      padding: 56px 0;
+    }
+    @media (min-width: 760px) {
+      .section { padding: 88px 0; }
+    }
+    .section-head {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 40px;
+    }
+    @media (min-width: 760px) {
+      .section-head { margin: 0 auto 56px; }
+    }
+    .section-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--body);
+    }
+
+    .nest-deco { position: relative; overflow: hidden; }
+    .nest-deco > .container { position: relative; z-index: 1; }
+    .nest-deco::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      width: 480px; height: 480px;
+      background: url('assets/kiota-nest-avatar.webp') center / contain no-repeat;
+      filter: grayscale(1);
+      opacity: 0.05;
+      pointer-events: none;
+    }
+    .nest-deco--tr::before { top: -130px; right: -120px; transform: rotate(8deg); }
+    .nest-deco--bl::before { bottom: -140px; left: -120px; transform: rotate(-6deg); }
+    @media (max-width: 760px) {
+      .nest-deco::before { width: 300px; height: 300px; }
+      .nest-deco--tr::before { top: -80px; right: -90px; }
+      .nest-deco--bl::before { bottom: -90px; left: -90px; }
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      column-gap: 18px;
+      align-items: start;
+      padding: 24px 0;
+      border-top: 1px solid var(--hairline);
+    }
+    .step:first-child { border-top: 0; padding-top: 4px; }
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .step-icon { display: none; }
+    .step h3 {
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+      padding-top: 2px;
+    }
+    .step p {
+      font-size: 0.98rem;
+      color: var(--body);
+      line-height: 1.55;
+    }
+
+    .step h3, .step p { grid-column: 2; }
+    .step-num { grid-row: 1 / span 2; }
+
+    @media (min-width: 820px) {
+      .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 48px;
+      }
+      .step {
+        display: block;
+        padding: 0;
+        border-top: 0;
+        border-left: 1px solid var(--hairline);
+        padding-left: 32px;
+      }
+      .step:first-child { border-left: 0; padding-left: 0; }
+      .step-num {
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+        display: block;
+      }
+      .step h3 { font-size: 1.35rem; margin-bottom: 8px; padding-top: 0; }
+      .step p { font-size: 1rem; max-width: 480px; }
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .feature {
+      background: var(--white);
+      border-radius: 22px;
+      border: 1px solid rgba(20,82,56,0.07);
+      padding: 30px 24px 24px;
+      box-shadow: 0 1px 2px rgba(20,82,56,0.04), 0 16px 40px -18px rgba(20,82,56,0.20);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform 0.32s cubic-bezier(0.16,1,0.3,1), box-shadow 0.32s cubic-bezier(0.16,1,0.3,1);
+    }
+    @media (min-width: 640px) {
+      .feature { padding: 36px 32px 32px; }
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 1px 2px rgba(20,82,56,0.05), 0 30px 64px -20px rgba(20,82,56,0.30);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .feature { transition: none; }
+      .feature:hover { transform: none; }
+    }
+    .feature-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      background: var(--green-soft);
+      color: var(--green);
+      border: 1px solid rgba(20,82,56,0.10);
+      border-radius: var(--radius-pill);
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      align-self: flex-start;
+      margin-bottom: 16px;
+    }
+    .feature h3 {
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 9px;
+    }
+    .feature p {
+      font-size: 0.98rem;
+      color: var(--body);
+      margin-bottom: 24px;
+    }
+
+    .feature-phone {
+
+      margin: auto -24px 0;
+      padding: 20px 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      background: var(--green-soft);
+      border-top: 1px solid rgba(26,107,74,0.08);
+    }
+    @media (min-width: 640px) {
+      .feature-phone { margin: auto -32px 0; }
+    }
+    .feature-phone img {
+      width: 100%;
+
+      max-width: 400px;
+      height: auto;
+      margin-bottom: -2px;
+      filter: drop-shadow(0 -8px 24px rgba(20,82,53,0.12));
+    }
+    @media (min-width: 760px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .feature-phone img { max-width: 360px; }
+    }
+
+    .fchat {
+      margin-top: auto;
+      border-radius: 16px;
+      border: 1px solid var(--hairline);
+      overflow: hidden;
+      box-shadow: 0 10px 26px -12px rgba(20,82,56,0.22);
+    }
+
+    .fchat-bar {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 14px; background: var(--green);
+    }
+    .fchat-av {
+      width: 37px; height: 37px; border-radius: 50%;
+      background: #fff; display: grid; place-items: center;
+      overflow: hidden; flex-shrink: 0;
+    }
+    .fchat-av img { width: 88%; height: auto; }
+    .fchat-meta { flex: 1; min-width: 0; line-height: 1.15; }
+    .fchat-name { font-family: var(--font-display); font-weight: 600; color: #fff; font-size: 0.9rem; }
+    .fchat-status { font-size: 0.68rem; color: rgba(255,255,255,0.85); display: inline-flex; align-items: center; gap: 5px; }
+    .fchat-status::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #7CF0B0; }
+
+    .fchat-body {
+      position: relative;
+      padding: 16px 14px 18px;
+      display: flex; flex-direction: column; gap: 8px;
+      min-height: 150px;
+      overflow: hidden;
+      background: url('assets/wa-bg.svg') 0 0 / 150px 150px repeat, var(--cream);
+    }
+
+    .fchat-msg, .fchat-img {
+      position: relative;
+      opacity: 0; transform: translateY(8px);
+    }
+    .fchat-msg {
+      max-width: 82%;
+      padding: 9px 13px;
+      font-size: 0.84rem; line-height: 1.45;
+      border-radius: 16px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    .fchat-msg.in  { align-self: flex-start; background: #fff; color: var(--ink); border-bottom-left-radius: 5px; }
+    .fchat-msg.out { align-self: flex-end; background: var(--green); color: #fff; border-bottom-right-radius: 5px; }
+    .fchat-link { color: var(--green); font-weight: 600; word-break: break-all; }
+
+    .fchat-img {
+      align-self: flex-end;
+      max-width: 172px;
+      padding: 4px;
+      background: var(--green);
+      border-radius: 16px; border-bottom-right-radius: 5px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    .fchat-img img, .fchat-img svg { display: block; width: 100%; height: auto; border-radius: 12px; }
+
+    .feature.is-visible .fchat-body > * { animation: fmsg 0.34s ease-out forwards; }
+    .feature.is-visible .fchat-body > *:nth-child(1) { animation-delay: 0.20s; }
+    .feature.is-visible .fchat-body > *:nth-child(2) { animation-delay: 0.55s; }
+    .feature.is-visible .fchat-body > *:nth-child(3) { animation-delay: 0.90s; }
+    .feature.is-visible .fchat-body > *:nth-child(4) { animation-delay: 1.25s; }
+    @keyframes fmsg { to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      .fchat-msg, .fchat-img { opacity: 1 !important; transform: none !important; animation: none !important; }
+    }
+
+    .comm-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .comm-card {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 16px;
+      text-align: left;
+      padding: 18px 0;
+      border-top: 1px solid var(--hairline);
+    }
+    .comm-card:first-child { border-top: 0; padding-top: 4px; }
+    .comm-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: var(--green-soft);
+      color: var(--green);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .comm-icon svg { width: 22px; height: 22px; }
+    .comm-text { flex: 1; min-width: 0; }
+    .comm-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 3px;
+      letter-spacing: -0.005em;
+    }
+    .comm-desc {
+      font-size: 0.95rem;
+      color: var(--body);
+      line-height: 1.5;
+    }
+    @media (min-width: 760px) {
+      .comm-grid { grid-template-columns: repeat(4, 1fr); gap: 40px 32px; }
+      .comm-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 0;
+        border-top: 0;
+      }
+      .comm-icon { width: 48px; height: 48px; }
+      .comm-icon svg { width: 24px; height: 24px; }
+      .comm-desc { max-width: 22ch; line-height: 1.55; }
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 56px;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .testi-card {
+      padding: 0;
+      position: relative;
+    }
+    .testi-quote-mark {
+      color: var(--gold);
+      font-size: 3.5rem;
+      line-height: 0.8;
+      margin-bottom: 16px;
+      font-weight: 600;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    .testi-quote {
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-bottom: 24px;
+      line-height: 1.5;
+      letter-spacing: -0.005em;
+    }
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testi-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--green-soft);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .testi-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .testi-role {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    @media (min-width: 760px) {
+      .testi-grid { grid-template-columns: repeat(2, 1fr); gap: 56px; }
+      .testi-quote { font-size: 1.3rem; }
+    }
+
+    .cta-section { padding: 64px 0; }
+    @media (min-width: 760px) { .cta-section { padding: 96px 0; } }
+
+    .waitlist {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      max-width: 980px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .waitlist { grid-template-columns: 1fr 1fr; gap: 56px; }
+    }
+
+    .waitlist-intro h2 {
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      letter-spacing: -0.02em;
+      margin: 12px 0 14px;
+    }
+    .waitlist-intro > p {
+      font-size: 1.05rem;
+      color: var(--body);
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 42ch;
+    }
+    .waitlist-benefits {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .waitlist-benefits li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .waitlist-benefit-ic {
+      width: 24px; height: 24px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--green-soft);
+      color: var(--green);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .waitlist-benefit-ic svg { width: 13px; height: 13px; }
+
+    .waitlist-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 28px 22px;
+      box-shadow: var(--shadow-raised);
+    }
+    @media (min-width: 520px) { .waitlist-card { padding: 36px 32px; } }
+
+    .waitlist-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .field-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 0.01em;
+    }
+    .req { color: var(--green); }
+    .field-optional {
+      font-weight: 400;
+      color: var(--muted);
+    }
+    .field-input {
+      width: 100%;
+      height: 50px;
+      padding: 0 16px;
+      font: 400 1rem var(--font);
+      color: var(--ink);
+      background: var(--white);
+      border: 1.5px solid var(--hairline);
+      border-radius: var(--radius-sm);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .field-input::placeholder { color: #B5AFA3; }
+    .field-input:hover { border-color: #D2C9B8; }
+    .field-input:focus {
+      outline: none;
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(26,107,74,0.12);
+    }
+    .field-input.is-invalid {
+      border-color: #C0392B;
+      box-shadow: 0 0 0 3px rgba(192,57,43,0.10);
+    }
+    .field-help {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .field-error {
+      font-size: 0.8rem;
+      color: #C0392B;
+      font-weight: 500;
+    }
+
+    .waitlist-submit {
+      margin-top: 4px;
+      height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--green);
+      color: #fff;
+      font: 700 1rem var(--font);
+      letter-spacing: -0.005em;
+      border-radius: var(--radius-pill);
+      transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 4px 14px rgba(26,107,74,0.24);
+    }
+    .waitlist-submit:hover:not(:disabled) {
+      background: var(--green-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(26,107,74,0.28);
+    }
+    .waitlist-submit:active:not(:disabled) { transform: translateY(0); }
+    .waitlist-submit:disabled { opacity: 0.55; cursor: wait; }
+    .waitlist-submit-arrow {
+      width: 18px; height: 18px;
+      transition: transform 0.15s ease;
+    }
+    .waitlist-submit:hover:not(:disabled) .waitlist-submit-arrow { transform: translateX(3px); }
+
+    .waitlist-status {
+      font-size: 0.88rem;
+      text-align: center;
+      color: #C0392B;
+      font-weight: 500;
+    }
+    .waitlist-status:empty { display: none; }
+
+    .waitlist-success {
+      display: none;
+      text-align: center;
+      padding: 12px 0;
+    }
+    .waitlist-success.is-visible { display: block; }
+    .waitlist-success-icon {
+      width: 56px; height: 56px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: var(--green-soft);
+      color: var(--green);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .waitlist-success h3 { font-size: 1.3rem; margin-bottom: 8px; }
+    .waitlist-success p {
+      font-size: 1rem;
+      color: var(--body);
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .chat-demo {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    @media (min-width: 900px) {
+      .chat-demo { grid-template-columns: 1fr 1fr; gap: 64px; }
+    }
+    .chat-copy h2 {
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      letter-spacing: -0.02em;
+      margin: 12px 0 14px;
+    }
+    .chat-copy > p {
+      font-size: 1.05rem;
+      color: var(--body);
+      line-height: 1.6;
+      max-width: 42ch;
+    }
+
+    .chat-window {
+      width: 100%;
+      max-width: 380px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--hairline);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-raised);
+      animation: chat-float 6s ease-in-out infinite;
+      will-change: transform;
+    }
+    @keyframes chat-float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
+    }
+    .chat-topbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      background: var(--green);
+    }
+    .chat-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .chat-avatar img { width: 88%; height: auto; object-fit: contain; }
+    .chat-meta { display: flex; flex-direction: column; line-height: 1.25; }
+    .chat-name { font-family: var(--font-display); font-weight: 600; color: #fff; font-size: 0.95rem; }
+    .chat-status {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.02em;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .chat-status::before {
+      content: "";
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #7CF0B0;
+    }
+    .chat-body {
+      padding: 22px 18px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 250px;
+      background: url('assets/wa-bg.svg') 0 0 / 150px 150px repeat, var(--cream);
+    }
+    .chat-msg {
+      max-width: 82%;
+      padding: 11px 15px;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      border-radius: 16px;
+      opacity: 0;
+      transform: translateY(6px);
+      animation: chat-pop 0.28s ease-out forwards;
+      animation-play-state: paused;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .chat-window.is-visible .chat-msg,
+    .chat-window.is-visible .chat-typing { animation-play-state: running; }
+    .chat-msg--in {
+      align-self: flex-start;
+      background: var(--white);
+      color: var(--ink);
+      border-bottom-left-radius: 5px;
+    }
+    .chat-msg--out {
+      align-self: flex-end;
+      background: var(--green);
+      color: #fff;
+      border-bottom-right-radius: 5px;
+    }
+    .chat-msg:nth-child(1) { animation-delay: 0.15s; }
+    .chat-msg:nth-child(2) { animation-delay: 0.55s; }
+    .chat-msg:nth-child(3) { animation-delay: 0.95s; }
+    @keyframes chat-pop { to { opacity: 1; transform: translateY(0); } }
+    .chat-typing {
+      align-self: flex-start;
+      display: flex;
+      gap: 5px;
+      padding: 13px 16px;
+      background: var(--white);
+      border-radius: 16px;
+      border-bottom-left-radius: 5px;
+      opacity: 0;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      animation: chat-typing-show 0.3s ease forwards;
+      animation-delay: 1.35s;
+      animation-play-state: paused;
+    }
+    .chat-typing span {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--slate, #B9B2A4);
+      animation: chat-typing-bounce 1.3s ease-in-out infinite;
+    }
+    .chat-typing span:nth-child(2) { animation-delay: 0.18s; }
+    .chat-typing span:nth-child(3) { animation-delay: 0.36s; }
+    @keyframes chat-typing-show { to { opacity: 1; } }
+    @keyframes chat-typing-bounce {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.45; }
+      30%           { transform: translateY(-5px); opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .chat-window { animation: none; }
+      .chat-msg, .chat-typing { animation-duration: 0.01ms; opacity: 1; transform: none; }
+    }
+
+    .footer {
+      border-top: 1px solid var(--hairline);
+      padding: 56px 0 32px;
+    }
+    .footer-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--hairline);
+    }
+    @media (min-width: 720px) {
+      .footer-top { grid-template-columns: 1.4fr 1fr 1.2fr; gap: 48px; }
+    }
+    .footer-brand { max-width: 320px; }
+    .footer-logo { display: inline-flex; }
+    .footer-logo img { height: 54px; width: auto; }
+    @media (min-width: 720px) { .footer-logo img { height: 64px; } }
+    .footer-tagline {
+      font-size: 0.95rem;
+      color: var(--body);
+      line-height: 1.6;
+      margin-top: 16px;
+    }
+    .footer-trust {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--green);
+    }
+    .footer-trust svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+    .footer-col-h {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-links a {
+      font-size: 0.92rem;
+      color: var(--body);
+      transition: color 0.15s ease;
+    }
+    .footer-links a:hover { color: var(--green); }
+
+    .footer-contact {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .footer-contact li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: var(--body);
+    }
+    .footer-contact a { color: var(--body); transition: color 0.15s ease; }
+    .footer-contact a:hover { color: var(--green); }
+    .footer-contact-ic {
+      width: 34px; height: 34px;
+      flex-shrink: 0;
+      border-radius: 9px;
+      background: var(--green-soft);
+      color: var(--green);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-contact-ic svg { width: 16px; height: 16px; }
+    .footer-contact-label {
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+    .footer-contact-val { font-weight: 600; color: var(--ink); }
+
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      text-align: center;
+      padding-top: 28px;
+    }
+    .footer-copy { font-size: 0.82rem; color: var(--muted); }
+    .footer-legal {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .footer-legal a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      transition: color 0.15s ease;
+    }
+    .footer-legal a:hover { color: var(--green); }
+    @media (min-width: 720px) {
+      .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
+    }
+
+    @media (max-width: 719px) {
+      .footer { padding: 44px 0 28px; }
+      .footer-top { gap: 0; padding-bottom: 24px; }
+      .footer-top > * + * {
+        margin-top: 26px;
+        padding-top: 26px;
+        border-top: 1px solid var(--hairline);
+      }
+      .footer-brand { max-width: none; }
+      .footer-contact-ic { width: 30px; height: 30px; border-radius: 8px; }
+      .footer-contact-ic svg { width: 15px; height: 15px; }
+      .footer-bottom { gap: 14px; padding-top: 24px; }
+      .footer-legal { gap: 24px; }
+    }
+
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-top: 1px solid var(--hairline);
+      overflow: hidden;
+    }
+    .faq-item:last-child { border-bottom: 1px solid var(--hairline); }
+    .faq-summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 24px 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--ink);
+      transition: color 0.15s ease;
+    }
+    .faq-summary::-webkit-details-marker { display: none; }
+    .faq-summary:hover { color: var(--green); }
+    .faq-icon {
+      width: 24px; height: 24px;
+      flex-shrink: 0;
+      color: var(--green);
+      transition: transform 0.25s ease;
+    }
+    .faq-item[open] .faq-icon { transform: rotate(45deg); }
+    .faq-body {
+      padding: 0 48px 24px 4px;
+      font-size: 0.98rem;
+      color: var(--body);
+      line-height: 1.6;
+    }
+
+    .fade-up { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.is-visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="switch-veil" id="switchVeil" aria-hidden="true">
+    <span class="sv-panel sv-left"></span>
+    <span class="sv-panel sv-right"></span>
+    <div class="switch-veil-inner">
+      <img src="Kiota logos/Kiota logos/Kiota.pngs/Kiota_no_bg_opt.webp" alt="" width="240" height="94">
+      <span class="switch-veil-tag"></span>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Kiota home">
+        <img src="Kiota logos/Kiota logos/Kiota.pngs/Kiota_no_bg_opt2.webp" alt="Kiota" width="320" height="125">
+      </a>
+      <div class="nav-seg" role="group" aria-label="Personal or business">
+        <a href="/" aria-current="page">For you</a>
+        <a href="/corporate">For business</a>
+      </div>
+      <a href="#waitlist" class="nav-cta">
+        Join waitlist
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="hero-eyebrow">Coming soon to WhatsApp</div>
+          <h1>Your money.<br>Your community.<br><span class="accent">All in WhatsApp.</span></h1>
+          <p class="hero-sub">
+            Send money, save with your stokvel, pay bills, and shop essentials, right inside the WhatsApp you already use every day. No bank account needed.
+          </p>
+          <div class="hero-actions">
+            <a href="#waitlist" class="btn-primary">
+              Join the waitlist
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#how-it-works" class="btn-secondary">
+              See how it works
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+          <div class="hero-meta">
+            <span>No app required</span>
+            <span class="hero-meta-dot"></span>
+            <span>Free to join</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-phone-card">
+            <img src="assets/phone-hero-opt.webp" alt="Kiota on WhatsApp" loading="eager" width="460" height="460">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"/></svg>
+        No app to download
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12V8a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4"/><path d="M16 12h6v4h-6a2 2 0 0 1 0-4z"/></svg>
+        No bank account needed
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+        Free to join
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        Safe &amp; secure
+      </div>
+    </div>
+  </div>
+
+  <section class="section nest-deco nest-deco--bl" id="how-it-works">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Getting started</div>
+        <h2 class="section-title">Up and running in 3 messages</h2>
+        <p class="section-sub">No forms, no branches, no waiting. If you have WhatsApp, you have Kiota.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step fade-up">
+          <div class="step-num">01</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>Say "Hi" on WhatsApp</h3>
+          <p>Message Kiota on WhatsApp. No app and no download, just the chat app you already have.</p>
+        </div>
+
+        <div class="step fade-up">
+          <div class="step-num">02</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="12" r="2.5"/><line x1="14" y1="10" x2="18" y2="10"/><line x1="14" y1="14" x2="17" y2="14"/></svg>
+          </div>
+          <h3>Verify in seconds</h3>
+          <p>Confirm your phone number and ID number. That's it. Your Kiota account is created instantly.</p>
+        </div>
+
+        <div class="step fade-up">
+          <div class="step-num">03</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>Start using Kiota</h3>
+          <p>Send money, top up airtime, join your group savings, or browse the marketplace. It all happens in the same chat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--cream-deep);">
+    <div class="container">
+      <div class="chat-demo">
+        <div class="chat-copy fade-up">
+          <div class="section-eyebrow">Just chat</div>
+          <h2>As easy as<br>texting a friend</h2>
+          <p>No menus to learn and nothing to install. Just tell Kiota what you need in your own words, like sending money home or buying airtime, and it is done.</p>
+        </div>
+
+        <div class="chat-window fade-up" aria-hidden="true">
+          <div class="chat-topbar">
+            <span class="chat-avatar"><img src="assets/kiota-nest-avatar.webp" alt="" width="424" height="424"></span>
+            <div class="chat-meta">
+              <span class="chat-name">Kiota</span>
+              <span class="chat-status">online</span>
+            </div>
+          </div>
+          <div class="chat-body">
+            <div class="chat-msg chat-msg--out">Send R100 to Lerato</div>
+            <div class="chat-msg chat-msg--in">Done ✅ R100 sent to Lerato. Your balance is R350.</div>
+            <div class="chat-msg chat-msg--out">Buy R20 airtime</div>
+            <div class="chat-typing"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Everything you need</div>
+        <h2 class="section-title">Just chat. Kiota handles the rest.</h2>
+        <p class="section-sub">One WhatsApp number. Everything from savings to shopping.</p>
+      </div>
+
+      <div class="features-grid">
+        <article class="feature fade-up">
+          <span class="feature-tag">Instant onboard</span>
+          <h3>Start in minutes</h3>
+          <p>No bank visit. No forms. No waiting. Just your phone number and ID, and you are in. It works in your own language.</p>
+          <div class="fchat" aria-hidden="true">
+            <div class="fchat-bar">
+              <span class="fchat-av"><img src="assets/kiota-nest-avatar.webp" alt="" width="424" height="424"></span>
+              <div class="fchat-meta"><div class="fchat-name">Kiota</div><div class="fchat-status">online</div></div>
+            </div>
+            <div class="fchat-body">
+              <div class="fchat-msg in">Welcome! 👋 Send a photo of your ID.</div>
+              <div class="fchat-img">
+                <img src="assets/id-card.webp" alt="A South African ID document" width="255" height="186">
+
+              </div>
+              <div class="fchat-msg in">Verified ✅ Account ready, Lerato!</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature fade-up">
+          <span class="feature-tag">Wallet</span>
+          <h3>Your money in one place</h3>
+          <p>Send money to family, get paid, and check your balance any time. Every rand is tracked, right there in your chat.</p>
+          <div class="fchat" aria-hidden="true">
+            <div class="fchat-bar">
+              <span class="fchat-av"><img src="assets/kiota-nest-avatar.webp" alt="" width="424" height="424"></span>
+              <div class="fchat-meta"><div class="fchat-name">Kiota</div><div class="fchat-status">online</div></div>
+            </div>
+            <div class="fchat-body">
+              <div class="fchat-msg out">What's my balance?</div>
+              <div class="fchat-msg in">R312.40 available 💚</div>
+              <div class="fchat-msg out">Send R100 to Lerato</div>
+              <div class="fchat-msg in">Done ✅ New balance R212.40.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature fade-up">
+          <span class="feature-tag">Refer &amp; earn</span>
+          <h3>Share it, earn from it</h3>
+          <p>Invite your neighbours, your church, or your stokvel. When someone you brought in uses Kiota, you earn.</p>
+          <div class="fchat" aria-hidden="true">
+            <div class="fchat-bar">
+              <span class="fchat-av"><img src="assets/kiota-nest-avatar.webp" alt="" width="424" height="424"></span>
+              <div class="fchat-meta"><div class="fchat-name">Kiota</div><div class="fchat-status">online</div></div>
+            </div>
+            <div class="fchat-body">
+              <div class="fchat-msg out">I want to invite a friend</div>
+              <div class="fchat-msg in">Here's your link: <span class="fchat-link">kiota.africa/invite/8F3K</span></div>
+              <div class="fchat-msg out">Sent it to my stokvel 🎉</div>
+              <div class="fchat-msg in">Nice. You earn R10 when each one joins.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature fade-up">
+          <span class="feature-tag">Marketplace</span>
+          <h3>Shop without leaving home</h3>
+          <p>Buy airtime, electricity, groceries, and more. You can even sell your own goods to neighbours, all in the same WhatsApp chat.</p>
+          <div class="fchat" aria-hidden="true">
+            <div class="fchat-bar">
+              <span class="fchat-av"><img src="assets/kiota-nest-avatar.webp" alt="" width="424" height="424"></span>
+              <div class="fchat-meta"><div class="fchat-name">Kiota</div><div class="fchat-status">online</div></div>
+            </div>
+            <div class="fchat-body">
+              <div class="fchat-msg out">Buy R50 airtime</div>
+              <div class="fchat-msg in">Done ✅ R50 airtime loaded.</div>
+              <div class="fchat-msg out">And R100 electricity</div>
+              <div class="fchat-msg in">Sorted ✅ Token sent to your phone.</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Built for your community</div>
+        <h2 class="section-title">Kiota is for people like you</h2>
+        <p class="section-sub">Whether you run a stokvel, lead a burial society, sell at the market, or look after your church accounts, Kiota fits the way your community already works.</p>
+      </div>
+
+      <div class="comm-grid">
+        <div class="comm-card fade-up">
+          <div class="comm-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="comm-text">
+            <div class="comm-name">Stokvels</div>
+            <div class="comm-desc">Pool savings, track contributions, pay out members</div>
+          </div>
+        </div>
+        <div class="comm-card fade-up">
+          <div class="comm-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="2" x2="12" y2="7"/><line x1="9.5" y1="4.5" x2="14.5" y2="4.5"/><path d="M5 22V11l7-5 7 5v11"/><line x1="9" y1="22" x2="9" y2="16"/><line x1="15" y1="22" x2="15" y2="16"/></svg>
+          </div>
+          <div class="comm-text">
+            <div class="comm-name">Churches</div>
+            <div class="comm-desc">Collect tithes, manage funds, send to members</div>
+          </div>
+        </div>
+        <div class="comm-card fade-up">
+          <div class="comm-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div class="comm-text">
+            <div class="comm-name">Burial Societies</div>
+            <div class="comm-desc">Pay contributions, manage claims, keep records</div>
+          </div>
+        </div>
+        <div class="comm-card fade-up">
+          <div class="comm-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="comm-text">
+            <div class="comm-name">Spaza &amp; Traders</div>
+            <div class="comm-desc">Accept payments, sell online, track stock</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section nest-deco nest-deco--tr" style="background:var(--cream-deep);">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">How it helps</div>
+        <h2 class="section-title">Made for everyday community life</h2>
+        <p class="section-sub">Illustrative examples of how people can use Kiota day to day.</p>
+      </div>
+
+      <div class="testi-grid">
+        <div class="testi-card fade-up">
+          <div class="testi-quote-mark">"</div>
+          <p class="testi-quote">Instead of cash in a tin, everyone can see the balance, contributions are tracked automatically, and payouts stay on schedule. That is the kind of thing Kiota is built for.</p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">SC</div>
+            <div>
+              <div class="testi-name">A stokvel chairperson</div>
+              <div class="testi-role">Soweto · example</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card fade-up">
+          <div class="testi-quote-mark">"</div>
+          <p class="testi-quote">Even without a bank account, you can send money to family in the village, pay for electricity, and buy airtime, all from your phone. No queues and no branch visits.</p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">IT</div>
+            <div>
+              <div class="testi-name">An informal trader</div>
+              <div class="testi-role">Durban · example</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Frequently asked</div>
+        <h2 class="section-title">Questions, answered</h2>
+        <p class="section-sub">Everything you need to know before you start.</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item fade-up">
+          <summary class="faq-summary">
+            What is Kiota Connect?
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="faq-body">Kiota Connect lets you handle your money and buy everyday essentials right inside WhatsApp. You can send and receive money, shop, and earn rewards, all from a chat.</div>
+        </details>
+
+        <details class="faq-item fade-up">
+          <summary class="faq-summary">
+            How does the membership work?
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="faq-body">Joining Kiota is free. Signing up opens your e-shop, digital wallet, SIM options, and referral tools, and you get a starter bundle of essentials to begin with. No forms to fill in and no branch to visit.</div>
+        </details>
+
+        <details class="faq-item fade-up">
+          <summary class="faq-summary">
+            What types of products can I buy on Kiota?
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="faq-body">You can buy mobile plans, airtime top-ups, medical cover, and other everyday essentials straight from the community e-shop.</div>
+        </details>
+
+        <details class="faq-item fade-up">
+          <summary class="faq-summary">
+            How do I earn rewards through referrals?
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="faq-body">Share your e-shop link with friends, family, or neighbours. When they buy something, you earn, and the money goes straight into your wallet.</div>
+        </details>
+
+        <details class="faq-item fade-up">
+          <summary class="faq-summary">
+            Is Kiota secure and compliant with regulations?
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="faq-body">Yes. We follow POPIA rules for handling your data, so your money and your personal details stay safe and private.</div>
+        </details>
+
+        <details class="faq-item fade-up">
+          <summary class="faq-summary">
+            Can I integrate Kiota with my services as a partner?
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="faq-body">Yes. We work with trusted partners across wallet, insurance, and mobile services, so you can get up and running quickly. It works well for MVNOs, NGOs, and community leaders.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section nest-deco nest-deco--bl" id="waitlist">
+    <div class="container">
+      <div class="waitlist">
+
+        <div class="waitlist-intro">
+          <div class="section-eyebrow">Join the waitlist</div>
+          <h2>Be first on Kiota</h2>
+          <p>Kiota lives inside WhatsApp, and we're rolling out community by community. Leave your details and we'll send you the link to get started the moment we go live in your area.</p>
+          <ul class="waitlist-benefits">
+            <li>
+              <span class="waitlist-benefit-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Early access before public launch
+            </li>
+            <li>
+              <span class="waitlist-benefit-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              A starter bundle when you join
+            </li>
+            <li>
+              <span class="waitlist-benefit-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              No spam, just one message when we launch
+            </li>
+          </ul>
+        </div>
+
+        <div class="waitlist-card">
+          <div class="waitlist-form-wrap" id="waitlist-form-wrap">
+            <form class="waitlist-form" id="waitlist-form" novalidate>
+              <div class="field">
+                <label class="field-label" for="wl-name">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input class="field-input" id="wl-name" name="name" type="text" autocomplete="name" placeholder="e.g. Thandi Mokoena" required>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="wl-email">Email address <span class="req" aria-hidden="true">*</span></label>
+                <input class="field-input" id="wl-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="wl-phone">Phone <span class="field-optional">(optional)</span></label>
+                <input class="field-input" id="wl-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+27 ...">
+                <span class="field-help">We'll only use this to reach you on WhatsApp at launch.</span>
+              </div>
+
+              <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+                <label>Company website<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label>
+              </div>
+
+              <button class="waitlist-submit" type="submit" id="waitlist-submit">
+                <span class="waitlist-submit-label">Join the waitlist</span>
+                <svg class="waitlist-submit-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </button>
+              <p class="waitlist-status" id="waitlist-status" role="alert" aria-live="assertive"></p>
+            </form>
+          </div>
+
+          <div class="waitlist-success" id="waitlist-success">
+            <div class="waitlist-success-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3>You're on the list</h3>
+            <p>Thanks! We'll be in touch as soon as Kiota goes live near you.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <a href="/" class="footer-logo" aria-label="Kiota home">
+            <img src="Kiota logos/Kiota logos/Kiota.pngs/Kiota_no_bg_opt2.webp" alt="Kiota" width="320" height="125">
+          </a>
+          <p class="footer-tagline">Banking for your community. Send money, save with your group, and shop essentials, all inside WhatsApp.</p>
+          <span class="footer-trust">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            POPIA-aligned &amp; secure
+          </span>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-h">Explore</div>
+          <ul class="footer-links">
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="#waitlist">Join the waitlist</a></li>
+            <li><a href="/corporate">Corporate site</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-h">Get in touch</div>
+          <ul class="footer-contact">
+            <li>
+              <span class="footer-contact-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></span>
+              <span><span class="footer-contact-label">Email us</span><a class="footer-contact-val" href="mailto:info@kiota.ai">info@kiota.ai</a></span>
+            </li>
+            <li>
+              <span class="footer-contact-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <span><span class="footer-contact-label">Call us</span><a class="footer-contact-val" href="tel:+27786757516">+27 78 675 7516</a></span>
+            </li>
+            <li>
+              <span class="footer-contact-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <span><span class="footer-contact-label">Visit us</span><span class="footer-contact-val">La Lucia Ridge, KwaZulu-Natal</span></span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Kiota Technologies. All rights reserved.</p>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('load', () => {
+      if (!window.location.hash) window.scrollTo(0, 0);
+    });
+
+    (function () {
+      const root = document.documentElement;
+      const desktop = matchMedia('(min-width: 900px) and (pointer: fine)').matches &&
+                      !matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (root.classList.contains('switching-in')) {
+        try { sessionStorage.removeItem('kiota-switch'); } catch (e) {}
+        let revealed = false;
+        const reveal = () => {
+          if (revealed) return;
+          revealed = true;
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            root.classList.add('sw-out');
+            root.classList.remove('switching-in');
+            setTimeout(() => root.classList.remove('sw-out', 'sw-business', 'sw-personal'), 700);
+          }));
+        };
+        if (document.readyState === 'complete') reveal();
+        else window.addEventListener('load', reveal, { once: true });
+        setTimeout(reveal, 780);
+      }
+
+      if (!desktop) return;
+      document.querySelectorAll('a[href="/corporate"]').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+          e.preventDefault();
+          const seg = link.closest('.nav-seg, .corp-seg');
+          if (seg) {
+            seg.querySelectorAll('a').forEach((a) => a.removeAttribute('aria-current'));
+            link.setAttribute('aria-current', 'page');
+          }
+          try { sessionStorage.setItem('kiota-switch', 'business'); } catch (err) {}
+          setTimeout(() => {
+            root.classList.add('sw-business', 'sw-cover');
+            setTimeout(() => { window.location.href = link.href; }, 330);
+          }, 240);
+        });
+      });
+    })();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach((item) => {
+      item.addEventListener('toggle', () => {
+        if (item.open) {
+          faqItems.forEach((other) => { if (other !== item) other.open = false; });
+        }
+      });
+    });
+
+    const wlForm = document.getElementById('waitlist-form');
+    const wlSubmit = document.getElementById('waitlist-submit');
+    const wlSubmitLabel = wlSubmit ? wlSubmit.querySelector('.waitlist-submit-label') : null;
+    const wlStatus = document.getElementById('waitlist-status');
+    const wlSuccess = document.getElementById('waitlist-success');
+    const wlWrap = document.getElementById('waitlist-form-wrap');
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    function validateField(input) {
+      const v = (input.value || '').trim();
+      let msg = '';
+      if (input.id === 'wl-name' && !v) msg = 'Please enter your name.';
+      if (input.id === 'wl-email') {
+        if (!v) msg = 'Please enter your email.';
+        else if (!emailRe.test(v)) msg = 'That email looks off. Mind checking it?';
+      }
+      setFieldError(input, msg);
+      return !msg;
+    }
+
+    function setFieldError(input, msg) {
+      const field = input.closest('.field');
+      let err = field.querySelector('.field-error');
+      if (msg) {
+        input.classList.add('is-invalid');
+        input.setAttribute('aria-invalid', 'true');
+        if (!err) {
+          err = document.createElement('span');
+          err.className = 'field-error';
+          field.appendChild(err);
+        }
+        err.textContent = msg;
+      } else {
+        input.classList.remove('is-invalid');
+        input.removeAttribute('aria-invalid');
+        if (err) err.remove();
+      }
+    }
+
+    if (wlForm) {
+      ['wl-name', 'wl-email'].forEach((id) => {
+        const el = document.getElementById(id);
+        el.addEventListener('blur', () => validateField(el));
+        el.addEventListener('input', () => {
+          if (el.classList.contains('is-invalid')) validateField(el);
+        });
+      });
+
+      wlForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        wlStatus.textContent = '';
+
+        const nameEl = document.getElementById('wl-name');
+        const emailEl = document.getElementById('wl-email');
+        const phoneEl = document.getElementById('wl-phone');
+
+        const okName = validateField(nameEl);
+        const okEmail = validateField(emailEl);
+        if (!okName || !okEmail) {
+          (okName ? emailEl : nameEl).focus(); // focus first invalid
+          return;
+        }
+
+        wlSubmit.disabled = true;
+        if (wlSubmitLabel) wlSubmitLabel.textContent = 'Sending…';
+
+        try {
+          const res = await fetch('/api/contact.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: nameEl.value.trim(),
+              email: emailEl.value.trim(),
+              organisation: '',
+              interest: 'waitlist',
+              phone: phoneEl.value.trim(),
+              company_website: (wlForm.querySelector('[name=company_website]') || {}).value || '',
+              message: `Waitlist signup from the consumer site.\nPhone: ${phoneEl.value.trim() || '(none)'}`,
+            }),
+          });
+          if (!res.ok) throw new Error('bad-status');
+          wlWrap.style.display = 'none';
+          wlSuccess.classList.add('is-visible');
+          wlSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } catch (err) {
+          wlSubmit.disabled = false;
+          if (wlSubmitLabel) wlSubmitLabel.textContent = 'Join the waitlist';
+          wlStatus.textContent = 'Something went wrong. Please try again in a moment.';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

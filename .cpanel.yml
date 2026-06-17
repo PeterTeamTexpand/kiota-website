@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    # Set DEPLOYPATH to the account's public_html (home dir is /home/kiotaai).
+    - export DEPLOYPATH=/home/kiotaai/public_html/
+    - /bin/cp -f index.html corporate.html styles.css main.js robots.txt sitemap.xml .htaccess $DEPLOYPATH
+    - /bin/cp -Rf assets fonts api "Kiota logos" $DEPLOYPATH

@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Clean URL for the corporate page (/corporate -> corporate.html)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^corporate/?$ corporate.html [L]
+
+# Old consumer path redirects to the homepage
+RewriteRule ^consumer/?$ / [R=302,L]
+
+ErrorDocument 404 /index.html
